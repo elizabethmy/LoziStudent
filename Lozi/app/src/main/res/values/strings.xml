@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">Lozi</string>
     <!--main-->
     <!--main-->
@@ -34,5 +34,8 @@
     <string name="food_dia_chi">121 Thành Thái,...</string>
     <string name="food_nguoi_chia_se">Nguyễn Văn A</string>
     <string name="food_share">Chia sẻ</string>
+       <!--facebook app id-->
+    <string name="facebook_app_id">870793363101718</string>
+    <string name="fb_login_protocol_scheme">fb870793363101718</string>
 
 </resources>

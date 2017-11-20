@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.tg.lozi.adapter.FoodAdapter;
+import com.example.tg.lozi.model.FoodItemModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class FoodActivity extends AppCompatActivity{
     }
 
     private void control(){
-        List<FoodItemObject>rowItemList=getAllItemList();
+        List<FoodItemModel>rowItemList=getAllItemList();
         xLayout=new GridLayoutManager(FoodActivity.this,2);
         RecyclerView rcv=(RecyclerView)findViewById(R.id.rvFoodItem);
         rcv.setHasFixedSize(true);
@@ -37,21 +38,21 @@ public class FoodActivity extends AppCompatActivity{
         rcv.setAdapter(foodAdapter);
     }
 
-    private List<FoodItemObject>getAllItemList(){
-        List<FoodItemObject>allItems=new ArrayList<FoodItemObject>();
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
-        allItems.add(new FoodItemObject("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+    private List<FoodItemModel>getAllItemList(){
+        List<FoodItemModel>allItems=new ArrayList<FoodItemModel>();
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
+        allItems.add(new FoodItemModel("Trà sữa và ăn vặt...",R.mipmap.food_tra_sua_an_vat,"121 Thành Thái...","5","Nguyễn Văn A",R.mipmap.ic_launcher));
         return allItems;
     }
 }

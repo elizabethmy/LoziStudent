@@ -1,10 +1,10 @@
-package com.example.tg.lozi.activity;
+package com.example.tg.lozi.model;
 
 /**
  * Created by TG on 11-11-17.
  */
 
-public class FoodItemObject {
+public class FoodItemModel {
     private String nameFood;
     private int photoFood;
     private String address;
@@ -12,7 +12,7 @@ public class FoodItemObject {
     private String nameUser;
     private int photoUser;
 
-    public FoodItemObject(String nameFood, int photoFood, String address, String numLike, String nameUser, int photoUser) {
+    public FoodItemModel(String nameFood, int photoFood, String address, String numLike, String nameUser, int photoUser) {
         this.nameFood = nameFood;
         this.photoFood = photoFood;
         this.address = address;

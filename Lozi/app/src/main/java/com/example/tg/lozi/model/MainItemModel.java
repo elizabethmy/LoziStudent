@@ -1,15 +1,15 @@
-package com.example.tg.lozi.activity;
+package com.example.tg.lozi.model;
 
 /**
  * Created by TG on 09-11-17.
  */
 
-public class ItemObject {
+public class MainItemModel {
 
     private String name;
     private int photo;
 
-    public ItemObject(String name, int photo) {
+    public MainItemModel(String name, int photo) {
         this.name = name;
         this.photo = photo;
     }

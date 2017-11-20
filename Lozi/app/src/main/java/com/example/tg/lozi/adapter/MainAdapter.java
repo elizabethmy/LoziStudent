@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tg.lozi.activity.ItemObject;
+import com.example.tg.lozi.model.MainItemModel;
 import com.example.tg.lozi.activity.R;
 
 import java.util.List;
@@ -18,11 +18,11 @@ import java.util.List;
  */
 
 public class MainAdapter extends RecyclerView.Adapter<MainHolders>{
-    private List<ItemObject>itemObjects;
+    private List<MainItemModel> mainItemModels;
     private Context context;
 
-    public MainAdapter(List<ItemObject>itemObjects,Context context){
-        this.itemObjects=itemObjects;
+    public MainAdapter(List<MainItemModel> mainItemModels, Context context){
+        this.mainItemModels = mainItemModels;
         this.context=context;
     }
 
@@ -35,12 +35,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainHolders>{
 
     @Override
     public void onBindViewHolder(MainHolders holder, int position) {
-        holder.tvName.setText(itemObjects.get(position).getName());
-        holder.imgItem.setImageResource(itemObjects.get(position).getPhoto());
+        holder.tvName.setText(mainItemModels.get(position).getName());
+        holder.imgItem.setImageResource(mainItemModels.get(position).getPhoto());
     }
 
     @Override
     public int getItemCount() {
-        return this.itemObjects.size();
+        return this.mainItemModels.size();
     }
 }
