@@ -34,3 +34,4 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
+
