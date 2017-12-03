@@ -30,7 +30,8 @@ public class LoginFacebookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mapVariable();
-        control();
+        goToMainActivity();
+        //control();
 
     }
 

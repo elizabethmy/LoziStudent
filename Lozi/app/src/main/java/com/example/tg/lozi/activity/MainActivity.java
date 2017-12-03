@@ -1,73 +1,40 @@
 package com.example.tg.lozi.activity;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
-import com.example.tg.lozi.adapter.MainAdapter;
-import com.example.tg.lozi.model.MainItemModel;
+import com.example.tg.lozi.fragment.MainBarFragment;
+import com.example.tg.lozi.fragment.MainFragment;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+/**drawable :
+ *
+ * Created by TG on 02-12-17.
+ */
 
-    private GridLayoutManager xLayout;
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle(null);
-        Control();
+       // control();
     }
 
-    private void Control(){
-        List<MainItemModel> rowListItem=getAllItemList();
-        xLayout = new GridLayoutManager(MainActivity.this, 2);
-        RecyclerView recyclerView=(RecyclerView)findViewById(R.id.rvItem);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(xLayout);
+    private void control() {
+        FragmentManager fragmentManager=getFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();//them vao gi do
+        Fragment fragment1=null;
+        Fragment fragment2=null;
+        fragment1=new MainFragment();
+        fragment2=new MainBarFragment();
 
-        MainAdapter rvAdapter=new MainAdapter(rowListItem,MainActivity.this);
-        recyclerView.setAdapter(rvAdapter);
+        fragmentTransaction.add(R.id.layMain,fragment1);
+        fragmentTransaction.add(R.id.layMain,fragment2);
+        fragmentTransaction.commit();
     }
-
-   private List<MainItemModel> getAllItemList(){
-        List<MainItemModel>allItems=new ArrayList<MainItemModel>();
-        allItems.add(new MainItemModel("Quanh đây",R.mipmap.find));
-       allItems.add(new MainItemModel("Đồ ăn",R.mipmap.main_food));
-       allItems.add(new MainItemModel("Đồ ăn ship",R.mipmap.main_ship_food));
-       allItems.add(new MainItemModel("Góc con gái",R.mipmap.main_girls_corner));
-       allItems.add(new MainItemModel("Đồ con trai",R.mipmap.main_boy_clothes));
-       allItems.add(new MainItemModel("Mỹ phẩm",R.mipmap.main_cosmetic));
-       allItems.add(new MainItemModel("Phụ kiện thời trang",R.mipmap.main_accessories_fashion));
-       allItems.add(new MainItemModel("Giày sneaker",R.mipmap.main_sneaker_shoe));
-       allItems.add(new MainItemModel("Tóc, Móng & Làm đẹp",R.mipmap.main_hair_nails_beautify));
-       allItems.add(new MainItemModel("Đồ điện tử",R.mipmap.main_electronic_devices));
-       allItems.add(new MainItemModel("Idol Hàn Quốc",R.mipmap.main_idol_korea));
-       allItems.add(new MainItemModel("Fan Nhật Bản",R.mipmap.main_fan_japan));
-       allItems.add(new MainItemModel("Sách & Truyện",R.mipmap.main_books_comics));
-       allItems.add(new MainItemModel("Thú cưng",R.mipmap.main_pets));
-       allItems.add(new MainItemModel("Xe cộ",R.mipmap.main_vehicle));
-       allItems.add(new MainItemModel("Đồ chơi & Sở thích",R.mipmap.main_toys_hobbies));
-       allItems.add(new MainItemModel("Âm nhạc",R.mipmap.main_musics));
-       allItems.add(new MainItemModel("Đồ gia dụng",R.mipmap.main_household_article));
-       allItems.add(new MainItemModel("Mẹ & Bé",R.mipmap.main_mother_baby));
-       allItems.add(new MainItemModel("Vật dụng trang trí nhà cửa",R.mipmap.main_ornament));
-       allItems.add(new MainItemModel("Phòng & Trọ",R.mipmap.main_home_bedsit));
-       allItems.add(new MainItemModel("Hàng order trước",R.mipmap.main_order_product));
-       allItems.add(new MainItemModel("Cần mua",R.mipmap.main_to_do));
-       allItems.add(new MainItemModel("Homestay",R.mipmap.main_homestay));
-       allItems.add(new MainItemModel("Vé sự kiện/Thẻ giảm giá",R.mipmap.main_ticket_voucher));
-       allItems.add(new MainItemModel("Khác",R.mipmap.main_others));
-       allItems.add(new MainItemModel("Quan tâm",R.mipmap.main_concern));
-       allItems.add(new MainItemModel("",R.mipmap.main_nothing));
-
-        return allItems;
-   }
 }
-
-
