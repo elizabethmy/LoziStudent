@@ -1,6 +1,7 @@
 ﻿<resources>
+    <!--app name-->
     <string name="app_name">Lozi</string>
-    <!--main-->
+
     <!--main-->
     <string name="main_around_here">Quanh đây</string>
     <string name="main_food">Đồ ăn</string>
@@ -29,13 +30,42 @@
     <string name="main_event_tickets_vourchers">Vé sự kiện/Thẻ giảm giá</string>
     <string name="main_other">Khác</string>
     <string name="main_concern">Quan tâm</string>
+
     <!--food-->
     <string name="food_tra_sua_an_va">Trà sữa và ăn vặ...</string>
     <string name="food_dia_chi">121 Thành Thái,...</string>
     <string name="food_nguoi_chia_se">Nguyễn Văn A</string>
     <string name="food_share">Chia sẻ</string>
+
        <!--facebook app id-->
     <string name="facebook_app_id">870793363101718</string>
     <string name="fb_login_protocol_scheme">fb870793363101718</string>
 
+    <!--search activity-->
+    <!--Search city or province-->
+    <string-array name="array_city_province">
+       <item>Thành phố Hồ Chí Minh</item>
+        <item>Hà Nội</item>
+        <item>Đà Nẵng</item>
+        <item>Hải Phòng</item>
+        <item>Cần Thơ</item>
+        <item>Khánh Hoà</item>
+        <item>Lâm Đồng</item>
+        <item>Tiền Giang</item>
+        <item>Vĩnh Long</item>
+        <item>An Giang</item>
+        <item>Bến Tre</item>
+        <item>Bình Thuận</item>
+        <item>Bà Rịa Vũng Tàu</item>
+        <item>Bình Dương</item>
+        <item>Bình Định</item>
+        <item>Đồng Nai</item>
+        <item>Đồng Tháp</item>
+        <item>Long An</item>
+        <item>Cà Mau</item>
+        <item>Phú Yên</item>
+    </string-array>
+    <string name="search_activity_title_list">TỈNH HOẶC THÀNH PHỐ</string>
+    <string name="search_activity_title">Chọn tỉnh/thành phố</string>
+    <string name="fragment_search_activity_title">Thành phố Hồ Chí Minh</string>
 </resources>
