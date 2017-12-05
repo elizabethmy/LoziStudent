@@ -1,8 +1,9 @@
 package com.example.tg.lozi.fragment;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,13 +20,17 @@ import java.util.List;
 public class MainFragment extends Fragment {
     private GridLayoutManager xLayout;
     private  View view;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
       view =inflater.inflate(R.layout.fragment_main,container,false);
+
         Control();
         return view;
     }
+
+
 
 
     private void Control(){
@@ -37,6 +42,7 @@ public class MainFragment extends Fragment {
 
         MainAdapter rvAdapter=new MainAdapter(rowListItem,getActivity());
         recyclerView.setAdapter(rvAdapter);
+
     }
 
    private List<MainItemModel> getAllItemList(){

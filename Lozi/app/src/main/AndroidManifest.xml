@@ -7,10 +7,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
+        android:icon="@drawable/ic_launcher"
         android:theme="@style/AppTheme">
         <!--login activity-->
         <activity android:name="com.example.tg.lozi.activity.LoginFacebookActivity">
@@ -46,6 +46,8 @@
         <activity android:name=".FoodActivity"></activity>
         <!--search activity-->
         <activity android:name=".SearchActivity"></activity>
+        <!--store-->
+        <activity android:name=".StoreActivity"></activity>
     </application>
 
 </manifest>

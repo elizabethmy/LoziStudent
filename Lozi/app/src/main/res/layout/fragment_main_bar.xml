@@ -10,6 +10,7 @@
 
     <ImageButton
         android:id="@+id/ibHome"
+        android:onClick="AddFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -19,6 +20,7 @@
 
     <ImageButton
         android:id="@+id/ibMessage"
+        android:onClick="AddFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -28,6 +30,7 @@
 
     <ImageButton
         android:id="@+id/ibSell"
+        android:onClick="AddFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -38,6 +41,7 @@
 
     <ImageButton
         android:id="@+id/ibNotification"
+        android:onClick="AddFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -47,6 +51,7 @@
 
     <ImageButton
         android:id="@+id/ibUser"
+        android:onClick="AddFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

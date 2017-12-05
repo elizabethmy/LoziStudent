@@ -1,10 +1,13 @@
 package com.example.tg.lozi.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.tg.lozi.adapter.FoodAdapter;
 import com.example.tg.lozi.model.FoodItemModel;
@@ -18,6 +21,7 @@ import java.util.List;
 
 public class FoodActivity extends AppCompatActivity{
     private GridLayoutManager xLayout;
+    private TextView tvCity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +40,13 @@ public class FoodActivity extends AppCompatActivity{
 
         FoodAdapter foodAdapter=new FoodAdapter(rowItemList, FoodActivity.this);
         rcv.setAdapter(foodAdapter);
+        tvCity=(TextView)findViewById(R.id.tvCity);
+        tvCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FoodActivity.this,SearchActivity.class));
+            }
+        });
     }
 
     private List<FoodItemModel>getAllItemList(){

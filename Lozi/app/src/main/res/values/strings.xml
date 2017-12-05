@@ -68,4 +68,9 @@
     <string name="search_activity_title_list">TỈNH HOẶC THÀNH PHỐ</string>
     <string name="search_activity_title">Chọn tỉnh/thành phố</string>
     <string name="fragment_search_activity_title">Thành phố Hồ Chí Minh</string>
+    <!--notification-->
+    <string name="notification_title">Thông báo</string>
+    <!--user info-->
+    <string name="user_info_name_user">Name user</string>
+    <string name="user_info_search">Tìm kiếm</string>
 </resources>

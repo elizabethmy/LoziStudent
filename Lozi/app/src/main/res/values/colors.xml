@@ -3,12 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorLine">#DFDFDF</color>
+    <color name="colorLine">#d1d1d1</color>
     <color name="colorMainText">#FFF2060A</color>
     <color name="colorMainBar">#eef1f1</color>
     <color name="colorButtonPress">#2E86C1</color>
     <color name="colorTextBlack">#080808</color>
     <color name="colorTextHint">#515151</color>
+    <color name="colorGreen">#08d754</color>
 </resources>
 
 

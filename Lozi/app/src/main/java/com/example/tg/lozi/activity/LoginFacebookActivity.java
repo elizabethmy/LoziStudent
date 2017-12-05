@@ -38,6 +38,7 @@ public class LoginFacebookActivity extends AppCompatActivity {
     public void goToMainActivity() {
         Intent intent=new Intent(LoginFacebookActivity.this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void mapVariable(){

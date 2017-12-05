@@ -3,44 +3,86 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/layMain">
+    android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.tg.lozi.fragment.MainFragment"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/layMainBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="424dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="0dp"
+        android:background="@color/colorMainBar"
+        android:orientation="horizontal"
+        android:weightSum="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment3"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.tg.lozi.fragment.MainBarFragment"
+        <ImageButton
+            android:id="@+id/ibHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:onClick="AddFragment"
+            app:srcCompat="@drawable/ic_home" />
+
+        <ImageButton
+            android:id="@+id/ibMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="2"
+            android:background="@null"
+
+            app:srcCompat="@drawable/ic_store" />
+
+        <ImageButton
+            android:id="@+id/ibSell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="2"
+            android:background="@color/colorGreen"
+            android:onClick="AddFragment"
+            android:tint="@color/colorAccent"
+            app:srcCompat="@drawable/ic_sell_product" />
+
+        <ImageButton
+            android:id="@+id/ibNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:onClick="AddFragment"
+            app:srcCompat="@drawable/ic_notifications" />
+
+        <ImageButton
+            android:id="@+id/ibUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:onClick="AddFragment"
+            app:srcCompat="@drawable/ic_person" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/framefragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/layMainBar"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <fragment
-        android:id="@+id/fragment3"
-        android:name="com.example.tg.lozi.fragment.MainSearchFragment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
