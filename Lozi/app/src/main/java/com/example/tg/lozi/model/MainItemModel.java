@@ -5,13 +5,22 @@ package com.example.tg.lozi.model;
  */
 
 public class MainItemModel {
-
+    private int id;
     private String name;
-    private int photo;
+    private String photo;
 
-    public MainItemModel(String name, int photo) {
+    public MainItemModel(int id, String name, String photo) {
+        this.id = id;
         this.name = name;
         this.photo = photo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -22,11 +31,11 @@ public class MainItemModel {
         this.name = name;
     }
 
-    public int getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(int photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 }

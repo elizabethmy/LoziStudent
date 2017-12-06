@@ -9,10 +9,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.tg.lozi.activity.R;
 import com.example.tg.lozi.adapter.MainAdapter;
 import com.example.tg.lozi.model.MainItemModel;
+import com.example.tg.lozi.util.CheckConnection;
+import com.example.tg.lozi.util.Server;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +37,12 @@ import java.util.List;
 public class MainFragment extends Fragment {
     private GridLayoutManager xLayout;
     private  View view;
+    ViewFlipper viewFlipper;
+    int id=0;
+    String nameTypeProduct="";
+    String imageTypeProduct="";
+    List<MainItemModel>allItems;
+    MainAdapter rvAdapter;
 
     @Nullable
     @Override
@@ -34,50 +57,86 @@ public class MainFragment extends Fragment {
 
 
     private void Control(){
-        List<MainItemModel> rowListItem=getAllItemList();
-        xLayout = new GridLayoutManager(getActivity(), 2);
-        RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.rvItem);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(xLayout);
+        if(CheckConnection.haveNetworkConnection(getContext())){
+            allItems=new ArrayList<MainItemModel>();
+            RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.rvItem);
+            xLayout = new GridLayoutManager(getActivity(), 2);
 
-        MainAdapter rvAdapter=new MainAdapter(rowListItem,getActivity());
-        recyclerView.setAdapter(rvAdapter);
+            getTypeProduct();
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(xLayout);
+            rvAdapter=new MainAdapter(allItems,getActivity());
+            recyclerView.setAdapter(rvAdapter);
 
+
+            viewFlipper=(ViewFlipper)view.findViewById(R.id.viewflipper);
+            actionViewFlipper();
+        }else{
+            CheckConnection.showToastShort(getContext(),"Error: No connection!");
+            getActivity().finish();
+        }
     }
 
-   private List<MainItemModel> getAllItemList(){
-        List<MainItemModel>allItems=new ArrayList<MainItemModel>();
-        allItems.add(new MainItemModel("Quanh đây",R.mipmap.find));
-       allItems.add(new MainItemModel("Đồ ăn",R.mipmap.main_food));
-       allItems.add(new MainItemModel("Đồ ăn ship",R.mipmap.main_ship_food));
-       allItems.add(new MainItemModel("Góc con gái",R.mipmap.main_girls_corner));
-       allItems.add(new MainItemModel("Đồ con trai",R.mipmap.main_boy_clothes));
-       allItems.add(new MainItemModel("Mỹ phẩm",R.mipmap.main_cosmetic));
-       allItems.add(new MainItemModel("Phụ kiện thời trang",R.mipmap.main_accessories_fashion));
-       allItems.add(new MainItemModel("Giày sneaker",R.mipmap.main_sneaker_shoe));
-       allItems.add(new MainItemModel("Tóc, Móng & Làm đẹp",R.mipmap.main_hair_nails_beautify));
-       allItems.add(new MainItemModel("Đồ điện tử",R.mipmap.main_electronic_devices));
-       allItems.add(new MainItemModel("Idol Hàn Quốc",R.mipmap.main_idol_korea));
-       allItems.add(new MainItemModel("Fan Nhật Bản",R.mipmap.main_fan_japan));
-       allItems.add(new MainItemModel("Sách & Truyện",R.mipmap.main_books_comics));
-       allItems.add(new MainItemModel("Thú cưng",R.mipmap.main_pets));
-       allItems.add(new MainItemModel("Xe cộ",R.mipmap.main_vehicle));
-       allItems.add(new MainItemModel("Đồ chơi & Sở thích",R.mipmap.main_toys_hobbies));
-       allItems.add(new MainItemModel("Âm nhạc",R.mipmap.main_musics));
-       allItems.add(new MainItemModel("Đồ gia dụng",R.mipmap.main_household_article));
-       allItems.add(new MainItemModel("Mẹ & Bé",R.mipmap.main_mother_baby));
-       allItems.add(new MainItemModel("Vật dụng trang trí nhà cửa",R.mipmap.main_ornament));
-       allItems.add(new MainItemModel("Phòng & Trọ",R.mipmap.main_home_bedsit));
-       allItems.add(new MainItemModel("Hàng order trước",R.mipmap.main_order_product));
-       allItems.add(new MainItemModel("Cần mua",R.mipmap.main_to_do));
-       allItems.add(new MainItemModel("Homestay",R.mipmap.main_homestay));
-       allItems.add(new MainItemModel("Vé sự kiện/Thẻ giảm giá",R.mipmap.main_ticket_voucher));
-       allItems.add(new MainItemModel("Khác",R.mipmap.main_others));
-       allItems.add(new MainItemModel("Quan tâm",R.mipmap.main_concern));
-       allItems.add(new MainItemModel("",R.mipmap.main_nothing));
+    private void getTypeProduct() {
 
-        return allItems;
-   }
+        RequestQueue requestQueue= Volley.newRequestQueue(getContext());
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.GET, Server.urlGetTypeProduct, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                    //
+                        if(response!=null){
+                            for(int i=0;i<response.length();i++){
+                                try {
+                                    JSONObject jsonObject=response.getJSONObject(i);
+                                    id=jsonObject.getInt("Id_type");
+                                    nameTypeProduct=jsonObject.getString("Name_type");
+                                    imageTypeProduct=jsonObject.getString("Image_type");
+                                    allItems.add(new MainItemModel(id,nameTypeProduct,imageTypeProduct));
+                                    rvAdapter.notifyDataSetChanged();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }else{
+                            //if response==null
+                        }
+                    //
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        CheckConnection.showToastShort(getContext(),error.toString());
+                    }
+                });
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    private void actionViewFlipper() {
+        ArrayList<String>manageAdvertise=new ArrayList<>();
+        manageAdvertise.add("https://images-na.ssl-images-amazon.com/images/I/61XTPnfEZcL.jpg");
+        manageAdvertise.add("https://t3.ftcdn.net/jpg/01/07/83/62/500_F_107836201_5C6e3enAcXoF0pMRbcPYgMbEU4N2kqsg.jpg");
+        manageAdvertise.add("https://i.ytimg.com/vi/Od6La6QFDz8/maxresdefault.jpg");
+        manageAdvertise.add("https://i.pinimg.com/736x/a7/b2/38/a7b238a86122a0a65b839eecb693f7b9--clothing-apparel-woman-clothing.jpg");
+        manageAdvertise.add("http://economists-pick-research.hktdc.com/resources/MI_Portal/Article/imn/2016/04/474262/1461310904232_16-4-4r1-2_474262.jpg");
+        for(int i=0;i<manageAdvertise.size();i++){
+            ImageView imageView=new ImageView(getContext());
+            Picasso.with(getContext()).load(manageAdvertise.get(i)).into(imageView);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            viewFlipper.addView(imageView);
+        }
+        viewFlipper.setFlipInterval(6000);
+        viewFlipper.setAutoStart(true);
+        Animation animation_slide_in= AnimationUtils.loadAnimation(getContext(),R.anim.slide_in_right);
+        Animation animation_slide_out= AnimationUtils.loadAnimation(getContext(),R.anim.slide_out_right);
+        viewFlipper.setInAnimation(animation_slide_in);
+        viewFlipper.setOutAnimation(animation_slide_out);
+    }
+
+
+
+
 }
 
 

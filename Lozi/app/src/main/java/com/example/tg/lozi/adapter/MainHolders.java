@@ -25,6 +25,6 @@ public class MainHolders extends RecyclerView.ViewHolder implements View.OnClick
 
     @Override
     public void onClick(View view){
-        Toast.makeText(view.getContext(), "Click item"+getPosition(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(), MainAdapter.nameProduct+"", Toast.LENGTH_SHORT).show();
     }
 }
