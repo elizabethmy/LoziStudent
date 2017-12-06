@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tg.lozi.activity.R;
 
@@ -25,6 +24,6 @@ public class MainHolders extends RecyclerView.ViewHolder implements View.OnClick
 
     @Override
     public void onClick(View view){
-        Toast.makeText(view.getContext(), MainAdapter.nameProduct+"", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(view.getContext(), MainAdapter.nameProduct+"", Toast.LENGTH_SHORT).show();
     }
 }

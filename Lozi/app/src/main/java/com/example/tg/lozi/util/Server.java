@@ -7,5 +7,6 @@ package com.example.tg.lozi.util;
 public class Server {
     public static String localhost="https://lozistudent.000webhostapp.com/";
     public static String urlGetTypeProduct=localhost+"getdatatype.php";
+    public static String urlGetFood=localhost+"getdatafood.php";
 
 }

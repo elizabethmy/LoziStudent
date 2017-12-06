@@ -6,19 +6,21 @@ package com.example.tg.lozi.model;
 
 public class FoodItemModel {
     private String nameFood;
-    private int photoFood;
+    private String imageFood;
     private String address;
-    private String numLike;
-    private String nameUser;
-    private int photoUser;
+    private int priceFood;
+    private String decribeFood;
+    private int idType;
+    private int id;
 
-    public FoodItemModel(String nameFood, int photoFood, String address, String numLike, String nameUser, int photoUser) {
+    public FoodItemModel(String nameFood, String imageFood, String address, int priceFood, String decribeFood, int idType, int id) {
         this.nameFood = nameFood;
-        this.photoFood = photoFood;
+        this.imageFood = imageFood;
         this.address = address;
-        this.numLike = numLike;
-        this.nameUser = nameUser;
-        this.photoUser = photoUser;
+        this.priceFood = priceFood;
+        this.decribeFood = decribeFood;
+        this.idType = idType;
+        this.id = id;
     }
 
     public String getNameFood() {
@@ -29,12 +31,12 @@ public class FoodItemModel {
         this.nameFood = nameFood;
     }
 
-    public int getPhotoFood() {
-        return photoFood;
+    public String getImageFood() {
+        return imageFood;
     }
 
-    public void setPhotoFood(int photoFood) {
-        this.photoFood = photoFood;
+    public void setImageFood(String imageFood) {
+        this.imageFood = imageFood;
     }
 
     public String getAddress() {
@@ -45,27 +47,35 @@ public class FoodItemModel {
         this.address = address;
     }
 
-    public String getNumLike() {
-        return numLike;
+    public int getPriceFood() {
+        return priceFood;
     }
 
-    public void setNumLike(String numLike) {
-        this.numLike = numLike;
+    public void setPriceFood(int priceFood) {
+        this.priceFood = priceFood;
     }
 
-    public String getNameUser() {
-        return nameUser;
+    public String getDecribeFood() {
+        return decribeFood;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setDecribeFood(String decribeFood) {
+        this.decribeFood = decribeFood;
     }
 
-    public int getPhotoUser() {
-        return photoUser;
+    public int getIdType() {
+        return idType;
     }
 
-    public void setPhotoUser(int photoUser) {
-        this.photoUser = photoUser;
+    public void setIdType(int idType) {
+        this.idType = idType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

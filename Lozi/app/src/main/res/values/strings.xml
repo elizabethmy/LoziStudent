@@ -33,9 +33,8 @@
 
     <!--food-->
     <string name="food_tra_sua_an_va">Trà sữa và ăn vặ...</string>
-    <string name="food_dia_chi">121 Thành Thái,...</string>
-    <string name="food_nguoi_chia_se">Nguyễn Văn A</string>
-    <string name="food_share">Chia sẻ</string>
+    <string name="food_decribe">121 Thành Thái,...Ngon Bo re</string>
+    <string name="food_price">10000</string>
 
        <!--facebook app id-->
     <string name="facebook_app_id">870793363101718</string>
@@ -67,7 +66,7 @@
     </string-array>
     <string name="search_activity_title_list">TỈNH HOẶC THÀNH PHỐ</string>
     <string name="search_activity_title">Chọn tỉnh/thành phố</string>
-    <string name="fragment_search_activity_title">Thành phố Hồ Chí Minh</string>
+    <string name="fragment_search_activity_title">Chọn tỉnh/thành phố</string>
     <!--notification-->
     <string name="notification_title">Thông báo</string>
     <!--user info-->

@@ -43,6 +43,7 @@ public class MainFragment extends Fragment {
     String imageTypeProduct="";
     List<MainItemModel>allItems;
     MainAdapter rvAdapter;
+    RecyclerView recyclerView;
 
     @Nullable
     @Override
@@ -59,7 +60,7 @@ public class MainFragment extends Fragment {
     private void Control(){
         if(CheckConnection.haveNetworkConnection(getContext())){
             allItems=new ArrayList<MainItemModel>();
-            RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.rvItem);
+             recyclerView=(RecyclerView)view.findViewById(R.id.rvItem);
             xLayout = new GridLayoutManager(getActivity(), 2);
 
             getTypeProduct();
@@ -71,10 +72,16 @@ public class MainFragment extends Fragment {
 
             viewFlipper=(ViewFlipper)view.findViewById(R.id.viewflipper);
             actionViewFlipper();
+            catchOnItem();
+
         }else{
-            CheckConnection.showToastShort(getContext(),"Error: No connection!");
+            CheckConnection.showToastShort(getContext(),"Error: No Internet connection!");
             getActivity().finish();
         }
+    }
+
+    private void catchOnItem() {
+
     }
 
     private void getTypeProduct() {
@@ -86,6 +93,7 @@ public class MainFragment extends Fragment {
                     public void onResponse(JSONArray response) {
                     //
                         if(response!=null){
+                            allItems.clear();//dam xoa du lieu neu bi trung
                             for(int i=0;i<response.length();i++){
                                 try {
                                     JSONObject jsonObject=response.getJSONObject(i);

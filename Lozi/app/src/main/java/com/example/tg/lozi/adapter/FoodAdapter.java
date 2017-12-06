@@ -5,10 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.example.tg.lozi.model.FoodItemModel;
 import com.example.tg.lozi.activity.R;
+import com.example.tg.lozi.model.FoodItemModel;
+import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -18,7 +21,7 @@ import java.util.List;
 public class FoodAdapter extends RecyclerView.Adapter<FoodHolders>{
 private List<FoodItemModel> foodItemModels;
 private Context context;
-
+public static String nameFood;
     public FoodAdapter(List<FoodItemModel> foodItemModels, Context context) {
         this.foodItemModels = foodItemModels;
         this.context = context;
@@ -33,13 +36,21 @@ private Context context;
 
     @Override
     public void onBindViewHolder(FoodHolders holder, int position) {
-        holder.imgFood.setImageResource(foodItemModels.get(position).getPhotoFood());
-        holder.imgUser.setImageResource(foodItemModels.get(position).getPhotoUser());
-
         holder.tvNameFood.setText(foodItemModels.get(position).getNameFood());
-        holder.tvAdress.setText(foodItemModels.get(position).getAddress());
-        holder.tvNumLike.setText(foodItemModels.get(position).getNumLike());
-        holder.tvNameUser.setText(foodItemModels.get(position).getNameUser());
+        holder.tvDecribe.setText(foodItemModels.get(position).getDecribeFood());
+
+        Picasso.with(context).load(foodItemModels.get(position).getImageFood()).placeholder(R.drawable.ic_no_image).error(R.drawable.ico_delete).into(holder.imgFood);
+
+        DecimalFormat decimalFormat=new DecimalFormat("###,###,###");
+        holder.tvPrice.setText("Giá: "+decimalFormat.format(foodItemModels.get(position).getPriceFood())+" vnd");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(),nameFood, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
