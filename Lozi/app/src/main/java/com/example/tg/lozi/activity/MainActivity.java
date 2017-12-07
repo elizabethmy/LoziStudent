@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(MainActivity.this,StoreActivity.class));
             }
         });
+        ibSell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SellActivity.class));
+            }
+        });
         fragment=new MainFragment();
         fragmentTransaction.add(R.id.framefragment,fragment,"frag");
         fragmentTransaction.commit();

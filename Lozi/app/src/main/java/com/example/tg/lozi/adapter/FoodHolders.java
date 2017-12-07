@@ -4,6 +4,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.tg.lozi.activity.R;
 
@@ -17,6 +18,7 @@ public AppCompatImageView imgFood;
 public AppCompatTextView tvNameFood;
 public AppCompatTextView tvDecribe;
 public AppCompatTextView tvPrice;
+public ImageButton ibBuy;
 
 
 
@@ -30,6 +32,7 @@ public FoodHolders(View itemView){
     tvNameFood=(AppCompatTextView)itemView.findViewById(R.id.tvNameFood);
     tvDecribe=(AppCompatTextView)itemView.findViewById(R.id.tvDecribe);
     tvPrice=(AppCompatTextView)itemView.findViewById(R.id.tvPrice);
+    ibBuy=(ImageButton)itemView.findViewById(R.id.ibBuy);
 
 }
     @Override

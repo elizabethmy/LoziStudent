@@ -1,12 +1,14 @@
 package com.example.tg.lozi.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.tg.lozi.activity.BuyActivity;
 import com.example.tg.lozi.activity.R;
 import com.example.tg.lozi.model.FoodItemModel;
 import com.squareup.picasso.Picasso;
@@ -22,6 +24,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodHolders>{
 private List<FoodItemModel> foodItemModels;
 private Context context;
 public static String nameFood;
+
     public FoodAdapter(List<FoodItemModel> foodItemModels, Context context) {
         this.foodItemModels = foodItemModels;
         this.context = context;
@@ -50,7 +53,14 @@ public static String nameFood;
                 Toast.makeText(view.getContext(),nameFood, Toast.LENGTH_SHORT).show();
             }
         });
+        holder.ibBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Buy", Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, BuyActivity.class));
 
+            }
+        });
     }
 
     @Override

@@ -24,14 +24,14 @@ import org.json.JSONObject;
 public class LoginFacebookActivity extends AppCompatActivity {
         LoginButton btloginFB;
         CallbackManager callbackManager;
+   public static String firstname, lastname, email,id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mapVariable();
-        goToMainActivity();
-        //control();
+        control();
 
     }
 
@@ -80,7 +80,6 @@ public class LoginFacebookActivity extends AppCompatActivity {
 
 
     public void displayUserInfo(JSONObject object) {
-        String firstname, lastname, email,id;
         try {
             firstname=object.getString("first_name");
             lastname=object.getString("last_name");

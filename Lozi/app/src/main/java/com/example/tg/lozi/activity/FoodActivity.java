@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,6 +47,7 @@ public class FoodActivity extends AppCompatActivity{
     private String adress;
     private int idType;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +60,7 @@ public class FoodActivity extends AppCompatActivity{
         if(CheckConnection.haveNetworkConnection(getApplicationContext())){
 
             allItems = new ArrayList<FoodItemModel>();
-            xLayout=new GridLayoutManager(FoodActivity.this,2);
+            xLayout=new GridLayoutManager(FoodActivity.this,1);
         rcv=(RecyclerView)findViewById(R.id.rvFoodItem);
 
         getFood();
@@ -73,6 +76,8 @@ public class FoodActivity extends AppCompatActivity{
                 startActivity(new Intent(FoodActivity.this,SearchActivity.class));
             }
         });
+
+
         }else{
             CheckConnection.showToastShort(getApplicationContext(),"Error: No Internet connection!");
             finish();

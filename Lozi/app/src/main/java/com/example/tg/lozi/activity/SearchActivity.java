@@ -22,7 +22,7 @@ import java.util.Arrays;
 public class SearchActivity extends AppCompatActivity {
     private Toolbar toolbar;
     ArrayList<String>arrayList;
-ListView lvMain;//show city or province to search
+    ListView lvMain;//show city or province to search
     ArrayAdapter<String>arrayAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

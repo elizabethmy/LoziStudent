@@ -36,14 +36,14 @@
     <string name="food_decribe">121 Thành Thái,...Ngon Bo re</string>
     <string name="food_price">10000</string>
 
-       <!--facebook app id-->
+    <!--facebook app id-->
     <string name="facebook_app_id">870793363101718</string>
     <string name="fb_login_protocol_scheme">fb870793363101718</string>
 
     <!--search activity-->
     <!--Search city or province-->
     <string-array name="array_city_province">
-       <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
         <item>Hà Nội</item>
         <item>Đà Nẵng</item>
         <item>Hải Phòng</item>
