@@ -14,16 +14,16 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class MainBarFragment extends Fragment {
-    View view;
+	View view;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_main_bar,container,false);
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_main_bar,container,false);
 
 
-        return view;
-    }
+		return view;
+	}
 
 
 

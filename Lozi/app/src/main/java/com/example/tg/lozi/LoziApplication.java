@@ -11,9 +11,9 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class LoziApplication extends AppCompatActivity {
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-    }
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
+	}
 }

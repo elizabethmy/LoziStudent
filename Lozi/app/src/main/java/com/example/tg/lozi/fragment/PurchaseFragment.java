@@ -14,24 +14,24 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class PurchaseFragment extends android.support.v4.app.Fragment{
-    public void PurchaseFragment(){
+	public void PurchaseFragment(){
 
-    }
-    View view;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_purchase,container,false);
-        init();
-        control();
-        return view;
-    }
+	}
+	View view;
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_purchase,container,false);
+		init();
+		control();
+		return view;
+	}
 
-    private void control() {
-        Toast.makeText(getContext(), "Purchase", Toast.LENGTH_SHORT).show();
-    }
+	private void control() {
+		Toast.makeText(getContext(), "Purchase", Toast.LENGTH_SHORT).show();
+	}
 
-    private void init() {
+	private void init() {
 
-    }
+	}
 }

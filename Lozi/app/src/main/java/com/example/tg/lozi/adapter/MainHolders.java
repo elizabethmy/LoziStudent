@@ -12,18 +12,18 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class MainHolders extends RecyclerView.ViewHolder implements View.OnClickListener{
-    public TextView tvName;
-    public ImageView imgItem;
+	public TextView tvName;
+	public ImageView imgItem;
 
-    public MainHolders(View itemView){
-        super(itemView);
-        itemView.setOnClickListener(this);
-        tvName=(TextView)itemView.findViewById(R.id.tvName);
-        imgItem=(ImageView)itemView.findViewById(R.id.imgItem);
-    }
+	public MainHolders(View itemView){
+		super(itemView);
+		itemView.setOnClickListener(this);
+		tvName=(TextView)itemView.findViewById(R.id.tvName);
+		imgItem=(ImageView)itemView.findViewById(R.id.imgItem);
+	}
 
-    @Override
-    public void onClick(View view){
-        //Toast.makeText(view.getContext(), MainAdapter.nameProduct+"", Toast.LENGTH_SHORT).show();
-    }
+	@Override
+	public void onClick(View view){
+		//Toast.makeText(view.getContext(), MainAdapter.nameProduct+"", Toast.LENGTH_SHORT).show();
+	}
 }

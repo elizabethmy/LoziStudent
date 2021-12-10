@@ -20,68 +20,68 @@ import java.util.Arrays;
  */
 
 public class SearchActivity extends AppCompatActivity {
-    private Toolbar toolbar;
-    ArrayList<String>arrayList;
-    ListView lvMain;//show city or province to search
-    ArrayAdapter<String>arrayAdapter;
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        init();
-        control();
+	private Toolbar toolbar;
+	ArrayList<String>arrayList;
+	ListView lvMain;//show city or province to search
+	ArrayAdapter<String>arrayAdapter;
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_search);
+		init();
+		control();
 
-    }
+	}
 
-    private void control() {
-        arrayAdapter=new ArrayAdapter<String>(SearchActivity.this,
-                                              android.R.layout.simple_list_item_1,
-                                                arrayList);
-        lvMain.setAdapter(arrayAdapter);
-    }
+	private void control() {
+		arrayAdapter=new ArrayAdapter<String>(SearchActivity.this,
+											  android.R.layout.simple_list_item_1,
+												arrayList);
+		lvMain.setAdapter(arrayAdapter);
+	}
 
-    private void init() {
-        lvMain=(ListView)findViewById(R.id.lvMain);
-        arrayList=new ArrayList<>();
-        arrayList.addAll(Arrays.asList(getResources().getStringArray(R.array.array_city_province)));
-        // Set toolbar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle(R.string.search_activity_title);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_keyboard_arrow_left);
+	private void init() {
+		lvMain=(ListView)findViewById(R.id.lvMain);
+		arrayList=new ArrayList<>();
+		arrayList.addAll(Arrays.asList(getResources().getStringArray(R.array.array_city_province)));
+		// Set toolbar
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setTitle(R.string.search_activity_title);
+		getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_keyboard_arrow_left);
 
-    }
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.menu_search,menu);
-        MenuItem menuItem=menu.findItem(R.id.mSearch);
-        SearchView searchView=(SearchView)menuItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater=getMenuInflater();
+		menuInflater.inflate(R.menu.menu_search,menu);
+		MenuItem menuItem=menu.findItem(R.id.mSearch);
+		SearchView searchView=(SearchView)menuItem.getActionView();
+		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+			@Override
+			public boolean onQueryTextSubmit(String s) {
+				return false;
+			}
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                arrayAdapter.getFilter().filter(s);
-                return false;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
-    }
+			@Override
+			public boolean onQueryTextChange(String s) {
+				arrayAdapter.getFilter().filter(s);
+				return false;
+			}
+		});
+		return super.onCreateOptionsMenu(menu);
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            startActivity(new Intent(SearchActivity.this, MainActivity.class));
-            finish(); // Or do you own task
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == android.R.id.home) {
+			startActivity(new Intent(SearchActivity.this, MainActivity.class));
+			finish(); // Or do you own task
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

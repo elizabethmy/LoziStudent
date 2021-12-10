@@ -16,23 +16,23 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class UserInfoFragment extends Fragment {
-    View view;
-    TextView tvFist,tvLast,tvEmail;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_user_info,container,false);
-        control();
-        return view;
-    }
+	View view;
+	TextView tvFist,tvLast,tvEmail;
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_user_info,container,false);
+		control();
+		return view;
+	}
 
-    private void control() {
-        tvFist=(TextView)view.findViewById(R.id.tvNameUserFist);
-        tvLast=(TextView)view.findViewById(R.id.tvNameUserLast);
-        tvEmail=(TextView)view.findViewById(R.id.tvEmailUser);
+	private void control() {
+		tvFist=(TextView)view.findViewById(R.id.tvNameUserFist);
+		tvLast=(TextView)view.findViewById(R.id.tvNameUserLast);
+		tvEmail=(TextView)view.findViewById(R.id.tvEmailUser);
 
-        tvFist.setText(LoginFacebookActivity.firstname);
-        tvLast.setText(LoginFacebookActivity.lastname);
-        tvEmail.setText(LoginFacebookActivity.email);
-    }
+		tvFist.setText(LoginFacebookActivity.firstname);
+		tvLast.setText(LoginFacebookActivity.lastname);
+		tvEmail.setText(LoginFacebookActivity.email);
+	}
 }

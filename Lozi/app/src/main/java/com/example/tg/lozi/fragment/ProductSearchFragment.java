@@ -14,12 +14,12 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class ProductSearchFragment extends Fragment {
-    View view;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_product_search,container,false);
+	View view;
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_product_search,container,false);
 
-        return view;
-    }
+		return view;
+	}
 }

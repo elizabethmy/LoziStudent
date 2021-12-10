@@ -15,24 +15,24 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class SellStoreFragment extends Fragment {
-    View view;
-    public SellStoreFragment() {
-        // Required empty public constructor
-    }
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_sell,container,false);
-        init();
-        control();
-        return view;
-    }
+	View view;
+	public SellStoreFragment() {
+		// Required empty public constructor
+	}
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_sell,container,false);
+		init();
+		control();
+		return view;
+	}
 
-    private void control() {
-        Toast.makeText(getContext(), "Sell", Toast.LENGTH_SHORT).show();
-    }
+	private void control() {
+		Toast.makeText(getContext(), "Sell", Toast.LENGTH_SHORT).show();
+	}
 
-    private void init() {
+	private void init() {
 
-    }
+	}
 }

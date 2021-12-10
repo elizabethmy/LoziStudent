@@ -30,22 +30,22 @@ import org.json.JSONObject;
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class MainSearchFragment extends Fragment{
 
-    View view;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_main_search,container,false);
-        init();
-        control();
-        return view;
-    }
+	View view;
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_main_search,container,false);
+		init();
+		control();
+		return view;
+	}
 
-    private void control() {
+	private void control() {
 
-    }
+	}
 
-    private void init() {
+	private void init() {
 
-    }
+	}
 
 }

@@ -36,26 +36,26 @@ private TabLayout tabLayout;
 //        return view;
 //    }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_store);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.fragment_store);
+		viewPager = (ViewPager) findViewById(R.id.viewpager);
+		setupViewPager(viewPager);
 
-        tabLayout = (TabLayout)findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-    }
+		tabLayout = (TabLayout)findViewById(R.id.tabs);
+		tabLayout.setupWithViewPager(viewPager);
+	}
 
-    public void setupViewPager(ViewPager viewPager) {
-        Toast.makeText(this, "setupviewPager", Toast.LENGTH_SHORT).show();
-       // FragmentActivity fragmentActivity = new FragmentActivity();
-        ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new PurchaseFragment(),"Mua");
-        viewPagerAdapter.addFragment(new SellStoreFragment(),"Bán");
-        viewPager.setAdapter(viewPagerAdapter);
+	public void setupViewPager(ViewPager viewPager) {
+		Toast.makeText(this, "setupviewPager", Toast.LENGTH_SHORT).show();
+	   // FragmentActivity fragmentActivity = new FragmentActivity();
+		ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
+		viewPagerAdapter.addFragment(new PurchaseFragment(),"Mua");
+		viewPagerAdapter.addFragment(new SellStoreFragment(),"Bán");
+		viewPager.setAdapter(viewPagerAdapter);
 
-    }
+	}
 
 
 }

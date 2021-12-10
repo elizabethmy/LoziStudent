@@ -15,12 +15,12 @@ import com.example.tg.lozi.activity.R;
  */
 
 public class NotificationFragment extends Fragment {
-    View view;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_notification,container,false);
+	View view;
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.fragment_notification,container,false);
 
-        return view;
-    }
+		return view;
+	}
 }
