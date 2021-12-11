@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/tvNotification"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="0dp"
+		android:padding="16dp"
+		android:text="@string/notification_title"
+		android:textAlignment="center"
+		android:textColor="@color/colorTextBlack"
+		android:textSize="@dimen/text_size_16"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	   <View
+		android:id="@+id/view"
+		android:layout_width="match_parent"
+		android:layout_height="2dp"
+		android:layout_margin="0dp"
+		android:background="@color/colorLine"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/tvNotification" />
+
+</android.support.constraint.ConstraintLayout>

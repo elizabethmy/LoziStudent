@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="com.example.tg.lozi.activity.LoginFacebookActivity">
+	<android.support.constraint.ConstraintLayout
+		android:layout_width="0dp"
+		android:layout_height="350dp"
+		android:id="@+id/layInfo"
+		android:background="#ff0f"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+	</android.support.constraint.ConstraintLayout>
+
+
+
+	<com.facebook.login.widget.LoginButton
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="30dp"
+		android:layout_marginBottom="30dp"
+		android:id="@+id/btLoginFB"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:textSize="16sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/layInfo" />
+
+	<Button
+		android:id="@+id/btLoginPhoneNum"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:text="phone"
+		android:textSize="16sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/btLoginFB" />
+
+</android.support.constraint.ConstraintLayout>

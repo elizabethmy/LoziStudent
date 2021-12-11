@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" android:orientation="horizontal"
+	android:layout_margin="8dp"
+	android:weightSum="10"
+	android:background="@color/colorMainBar">
+
+	<ImageButton
+		android:id="@+id/ibHome"
+		android:onClick="AddFragment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:layout_weight="2"
+		android:background="@null"
+		app:srcCompat="@drawable/ic_home" />
+
+	<ImageButton
+		android:id="@+id/ibMessage"
+		android:onClick="AddFragment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:layout_weight="2"
+		android:background="@null"
+		app:srcCompat="@drawable/ic_store" />
+
+	<ImageButton
+		android:id="@+id/ibSell"
+		android:onClick="AddFragment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:layout_weight="2"
+		android:background="@null"
+		android:tint="@color/colorAccent"
+		app:srcCompat="@drawable/ic_sell_product" />
+
+	<ImageButton
+		android:id="@+id/ibNotification"
+		android:onClick="AddFragment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:layout_weight="2"
+		android:background="@null"
+		app:srcCompat="@drawable/ic_notifications" />
+
+	<ImageButton
+		android:id="@+id/ibUser"
+		android:onClick="AddFragment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:layout_weight="2"
+		android:background="@null"
+		app:srcCompat="@drawable/ic_person" />
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="com.example.tg.lozi.activity.MainActivity">
+
+	<ImageView
+		android:id="@+id/imProduct"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="32dp"
+		android:src="@mipmap/main_books_comics"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.498"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<EditText
+		android:id="@+id/etNameInsert"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="36dp"
+		android:ems="10"
+		android:hint="Name"
+		android:inputType="textPersonName"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/imProduct" />
+
+	<EditText
+		android:id="@+id/etPrice"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="32dp"
+		android:ems="10"
+		android:hint="Price"
+		android:inputType="number"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.503"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/etNameInsert" />
+
+	<EditText
+		android:id="@+id/etDescribe"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="24dp"
+		android:ems="10"
+		android:hint="Describe"
+		android:inputType="textPersonName"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.503"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/etPrice" />
+
+	<Button
+		android:id="@+id/btType"
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="16dp"
+		android:text="Loại sản phẩm"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/etDescribe" />
+
+	<Button
+		android:id="@+id/btImage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="52dp"
+		android:layout_marginTop="24dp"
+		android:text="Hình ảnh"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btType" />
+
+	<Button
+		android:id="@+id/btProvince"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="52dp"
+		android:layout_marginTop="8dp"
+		android:text="Tỉnh/Thành phố"
+		app:layout_constraintBottom_toBottomOf="@+id/btImage"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/btImage"
+		app:layout_constraintVertical_bias="1.0" />
+
+	<Button
+		android:id="@+id/btInsert"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="52dp"
+		android:layout_marginTop="16dp"
+		android:text="Thêm"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btImage" />
+
+	<Button
+		android:id="@+id/btCancelInsert"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="64dp"
+		android:layout_marginTop="8dp"
+		android:text="Huỷ"
+		app:layout_constraintBottom_toBottomOf="@+id/btInsert"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/btInsert"
+		app:layout_constraintVertical_bias="1.0" />
+</android.support.constraint.ConstraintLayout>
